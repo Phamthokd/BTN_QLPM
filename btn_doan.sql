@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 12, 2022 lúc 07:21 AM
+-- Thời gian đã tạo: Th5 12, 2022 lúc 04:49 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -48,6 +48,15 @@ CREATE TABLE `category` (
   `active` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `category`
+--
+
+INSERT INTO `category` (`id`, `title`, `image_name`, `featured`, `active`) VALUES
+(1, 'Pizza', 'Food_Category_790.jpg', 1, 1),
+(2, 'Burger', 'Food_Category_344.jpg', 1, 1),
+(3, 'MoMo', 'Food_Category_77.jpg', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +73,17 @@ CREATE TABLE `food` (
   `featured` int(1) NOT NULL DEFAULT 1,
   `active` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `food`
+--
+
+INSERT INTO `food` (`id`, `title`, `description`, `price`, `image_name`, `category_id`, `featured`, `active`) VALUES
+(1, 'Dumplings Specials', 'Chicken Dumpling with herbs from Mountains', '5.00', 'Food-Name-3649.jpg', 3, 1, 1),
+(2, 'Best Burger', 'Burger with Ham, Pineapple and lots of Cheese', '4.00', 'Food-Name-6340.jpg', 2, 1, 1),
+(3, 'Smoky BBQ Pizza', 'Best Firewood Pizza in Town.', '6.00', 'Food-Name-8298.jpg', 1, 1, 1),
+(4, 'Sadeko Momo', 'Best Spicy Momo for Winter', '6.00', 'Food-Name-7387.jpg', 3, 1, 1),
+(9, 'Mixed Pizza', 'Pizza with chicken, Ham, Buff, Mushroom and Vegeta..', '10.00', 'Food-Name-7833.jpg', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -154,13 +174,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `oder`
