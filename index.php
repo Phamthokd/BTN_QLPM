@@ -4,14 +4,13 @@
         height: 20vh;
       "
     >
-    <?php include('./configs/database.php') ;?>
 
     <div class="container-fluid justify-content-center">
-        <form class="d-flex input-group w-auto">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
+        <form class="d-flex input-group w-auto" action="search_food.php" method="POST">
+            <input type="search" class="form-control rounded" name="search_food" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit"  class="input-group-text border-0" id="search-addon">
                 <i class="fas fa-search"></i>
-            </span>
+            </button>
         </form>
     </div>
 </nav>

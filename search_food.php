@@ -1,5 +1,27 @@
+<?php
+
+use function PHPSTORM_META\sql_injection_subst;
+
+include('./partials_front/header.php'); ?>
+
+<nav class="navbar navbar-light py-5 bg-image" style="
+        background-image: url('./assets/images/chup-anh-thuc-an-1.jpg');
+        height: 20vh;
+      ">
+    <?php
+    include('./configs/database.php');
+    $search = mysqli_real_escape_string($conn, $_POST['search_food']);
+    ?>
+    <div class="container-fluid justify-content-center">
+        <form class="d-flex input-group w-auto">
+            <h2 class="text-white">Các món ăn liên quan tới <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
+        </form>
+    </div>
+</nav>
+
+
 <?php include('./configs/database.php');
-$sql = "SELECT * FROM `food` WHERE active = '1'";
+$sql = "SELECT * FROM `food` WHERE active = '1' and title = '$search' or active = '1' and description = '$search'";
 $res = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($res);?>
  
@@ -38,3 +60,6 @@ if ($count > 0) {
 }
 ?>
 </div>
+
+
+<?php include('./partials_front/footer.php') ?>
