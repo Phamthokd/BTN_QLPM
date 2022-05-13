@@ -45,7 +45,14 @@
                 <!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
-
+            
+        <form class="d-flex input-group w-auto" action="search_food.php" method="POST">
+            <input type="search" class="form-control rounded" name="search_food" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Icon -->
