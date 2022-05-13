@@ -12,7 +12,7 @@
 </head>
 
 <body>
- <?php include('./controllers/login_check.php') ?>
+  <?php include('./controllers/logout_check.php') ?>
   <!-- HEADER -->
   <header id="main-header" class="text-white bg-dark fixed-top">
     <div class="container">
@@ -27,7 +27,28 @@
 
   <!-- LOGIN -->
   <div class="container">
-    BTN
+    <div class="row my-auto " style="height: 200px;"></div>
+    <div class="col-md-6 m-auto">
+      <div class="card">
+        <div class="card-header">
+          <h4>Account Login</h4>
+        </div>
+        <div class="card-body">
+          <form action="./controllers/login_account.php" method="post" >
+            <div class="form-group">
+              <label for="email">Tên đăng nhập</label>
+              <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Mật khẩu</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <?php include('./controllers/login_error.php') ?>
+            <input type="submit" value="Login" class="btn btn-primary btn-block">
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- FOOTER -->
   <div style="height: 100px;"></div>
