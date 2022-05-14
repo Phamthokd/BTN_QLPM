@@ -4,6 +4,24 @@ $res = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($res); ?>
 
 <div class="container monan">
+<?php
+  if (isset($_POST['btn_oder'])) {
+
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $qty = $_POST['qty'];
+    $total = $qty * $price;
+    $sql1 = "INSERT INTO `oder`(`user_id`, `food_id`, `qty`, `total`,`custormer_name`, `customer_contact`, `customer_address`) VALUES (23,$id,'$qty','$total','$name','$phone','$address') ";
+    $res1 = mysqli_query($conn, $sql1);
+    if($res1 == true){
+      $values_oder = 'success';
+      echo $values_oder;
+    }
+  }
+
+
+  ?>
     <h2 class="py-5">Món ăn</h2>
     <div class="row">
         <!--Grid row-->

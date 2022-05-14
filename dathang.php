@@ -17,7 +17,7 @@ if ($count > 0) {
 
   <div class="container col-6 mt-5 h-100">
     <h2>Tiến hành đặt hàng</h2>
-    <form action="" method="POST">
+    <form action="http://localhost:88/BTN_QLPM/monan-food.php?id=''" method="POST">
       <h4>Món ăn: <?php echo $title; ?></h4>
       <input type="hidden" name="food" value="<?php echo $title; ?>">
       <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -45,8 +45,7 @@ if ($count > 0) {
 
       <div class="input-group mb-3 form-outline">
         <span class="input-group-text">$</span>
-        <span class="input-group-text"><?php echo $price;
-                                      } ?></span>
+        <span class="input-group-text"><?php echo $price;} ?></span>
         <input type="number" class="form-control" name="qty" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Số lượng" />
       </div>
 
@@ -54,20 +53,7 @@ if ($count > 0) {
       <button type="submit" class="btn btn-primary btn-block mb-4" name="btn_oder">
         Đặt hàng
       </button>
+   
     </form>
   </div>
-  <?php
-  if (isset($_POST['btn_oder'])) {
-
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $address = $_POST['address'];
-    $qty = $_POST['qty'];
-    $total = $qty * $price;
-    $sql1 = "INSERT INTO `oder`(`user_id`, `food_id`, `qty`, `total`,`custormer_name`, `customer_contact`, `customer_address`) VALUES (1,$id,'$qty','$total','$name','$phone','$address') ";
-    $res1 = mysqli_query($conn, $sql1);
-  }
-
-
-  ?>
   <?php include('./partials_front/footer.php'); ?>
