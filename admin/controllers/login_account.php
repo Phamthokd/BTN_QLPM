@@ -14,6 +14,7 @@ $du_lieu = mysqli_query($conn, $sql);
 $so_luong = mysqli_num_rows($du_lieu);
 if ($so_luong == 1) {
     session_start();
+    unset($_SESSION['login_error']);
     $_SESSION['username'] = $username;
     header("Location: http://localhost:88/BTN_QLPM/admin/hang/index.php");
 } else {

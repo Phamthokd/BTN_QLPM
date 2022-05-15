@@ -45,11 +45,12 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         $price = $_POST["price"];
+        $active = $_POST["active"];
         $title = $_POST["food_name"];
         $description = $_POST["mo_ta"];
         $imagename = basename($_FILES["fileToUpload"]["name"]);
         $category_id = $_POST["category_id"];
-        $sqlInsert = "INSERT INTO food (title, description, price,image_name,category_id) VALUES ('$title','$description','$price','$imagename','$category_id')";
+        $sqlInsert = "INSERT INTO food (title, description, price,image_name,category_id,active) VALUES ('$title','$description','$price','$imagename','$category_id','$active')";
         $du_lieu = mysqli_query($conn, $sqlInsert);
         if ($du_lieu == 1) {
             header('Location: http://localhost:88/BTN_QLPM/admin/hang/index.php');
@@ -58,4 +59,3 @@ if ($uploadOk == 0) {
         echo "Xin lỗi, có lỗi khi tải file của bạn.";
     }
 }
-// $sqlUpdate = "UPDATE plan SET title='" . $title . "',date_start='" . $start . "',date_end='" . $end . "' WHERE plan_id=" . $id;

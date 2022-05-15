@@ -49,12 +49,10 @@
                 <div class="row">
                   <div class="col">
                     <div class="form-group">
-                      <label for="size">Danh mục hàng</label>
-                      <select id="size" name="size" class="form-control">
-                        <option>-- Chọn một size --</option>
-                        <option>Nhỏ</option>
-                        <option>Vừa</option>
-                        <option>Lớn</option>
+                      <select id="active" name="active" class="form-control">
+                      <option value="" disabled selected>-- Chọn trạng thái --</option>
+                      <option value='1'>Hoạt động</option>
+                      <option value='0'>Không hoạt động</option>
                       </select>
                     </div>
                   </div>
@@ -103,30 +101,6 @@
         uploadBtn.style.display = 'none';
       }
     }
-    var inputs = document.querySelectorAll('.inputfile');
-    Array.prototype.forEach.call(inputs, function(input) {
-      var label = input.nextElementSibling,
-        labelVal = label.innerHTML;
-
-      input.addEventListener('change', function(e) {
-        var fileName = '';
-        if (this.files && this.files.length > 1)
-          fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-        else
-          fileName = e.target.value.split('\\').pop();
-
-        if (fileName)
-          label.querySelector('span').innerHTML = fileName;
-        else
-          label.innerHTML = labelVal;
-      });
-    });
-
-    // function them_moi() {
-    //   var variation = document.getElementsByClassName("variation")[0];
-
-    //   $(".variations").append(variation.innerHTML); // Append new elements
-    // }
   </script>
 </body>
 

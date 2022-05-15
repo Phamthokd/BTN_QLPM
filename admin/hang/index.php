@@ -35,18 +35,7 @@
               <div class="row">
                 <h4 class="col-md-6">Danh sách hàng</h4>
                 <div class="dropdown ml-auto col-md-3">
-                  <button class="btn btn-primary btn-block dropdown-toggle" type="button" data-toggle="dropdown">
-                    Đang kinh doanhh
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Đang khuyến mại</a>
-                    <a class="dropdown-item" href="#">Không khuyến mại</a>
-                    <a class="dropdown-item" href="#">Sắp hết hàng</a>
-                    <a class="dropdown-item" href="#">Hết hàng</a>
-                    <a class="dropdown-item" href="#">Đã ẩn</a>
-                    <a class="dropdown-item" href="#">Quần</a>
-                    <a class="dropdown-item" href="#">Áo</a>
-                  </div>
+            
                 </div>
               </div>
             </div>
@@ -56,10 +45,10 @@
               <tr>
                 <th>Mã hàng</th>
                 <th>Tên hàng</th>
-                <th>Danh mục</th>
+                <th>Mô tả</th>
                 <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Khuyến mại</th>
+                <th>Danh mục</th>
+                <th>Hoạt động</th>
                 <th style="width: 120px;"></th>
               </tr>
             </thead>
