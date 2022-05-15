@@ -107,9 +107,8 @@
   </section>
   <!-- FOOTER -->
   <div style="height: 100px;"></div>
-
-
-  <?php include('../shared/script.php') ?>'
+  <?php include('../shared/script.php') ?>
+  <!-- SCRIPT -->
   <?php include('../shared/script.php') ?>
 </body>
 

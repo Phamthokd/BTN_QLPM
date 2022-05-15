@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col">
           <p class="text-center">
-            Copyright © 2019 Bich Lua - All rights reserved
+            Copyright © 2022 ABC Food - All rights reserved
           </p>
         </div>
       </div>

@@ -5,49 +5,7 @@
 
 <body>
   <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-3">
-    <div class="container">
-      <a href="#" class="navbar-brand">Bich Lua</a>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav">
-          <li class="nav-item px-2">
-            <a href="../hang/index.php" class="nav-link active">Hàng</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="../danh_muc_hang/index.php" class="nav-link">Danh mục hàng</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="../ban_hang/index.php" class="nav-link">Bán hàng</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="../giao_hang/index.php" class="nav-link">Giao hàng</a>
-          </li>
-          <li class="nav-item px-2">
-            <a href="../tai_khoan/index.php" class="nav-link">Tài khoản</a>
-          </li>
-        </ul>
-
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown mr-3">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <i class="fas fa-user"></i> Hi, Thảo!
-            </a>
-            <div class="dropdown-menu">
-              <a href="../tai_khoan/cai_dat.php" class="dropdown-item">
-                <i class="fas fa-cog"></i> Cài đặt
-              </a>
-              <a href="../login.php" class="dropdown-item">
-                <i class="fas fa-sign-out-alt"></i> Đăng xuất
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include('../shared/menu.php') ?>
   <!-- HEADER -->
   <header id="main-header" class="py-2">
     <div class="container">
@@ -74,10 +32,10 @@
               <label for="">Danh mục hàng</label>
               <select class="form-control">
                 <option>-- Chọn một danh mục --</option>
-                <option>Quần</option>
-                <option>Áo</option>
-                <option>Giày</option>
-                <option>Phụ kiện</option>
+                <option>Bánh Hamburger</option>
+                <option>Nước</option>
+                <option>Bánh quy</option>
+                <option>Bánh mì</option>
               </select>
             </div>
 
@@ -88,19 +46,12 @@
                 <div class="row">
                   <div class="col">
                     <div class="form-group">
-                      <label for="mo_ta">Màu</label>
-                      <input type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="form-group">
                       <label for="">Danh mục hàng</label>
                       <select class="form-control">
                         <option>-- Chọn một size --</option>
-                        <option>X</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
+                        <option>Nhỏ</option>
+                        <option>Vừa</option>
+                        <option>Lớn</option>
                       </select>
                     </div>
                   </div>
@@ -162,6 +113,8 @@
   </section>
   <!-- FOOTER -->
   <div style="height: 100px;"></div>
+  <?php include('../shared/footer.php') ?>
+  <?php include('../shared/script.php') ?>
 
   <!-- SCRIPTS -->
   <script src="../assets/js/jquery-3.3.1.js"></script>
