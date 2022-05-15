@@ -30,21 +30,16 @@
               <input id="food_name" type="text" name="food_name" class="form-control" />
             </div>
             <div class="form-group">
-              <label for="">Danh mục hàng</label>
-              <select class="form-control">
+              <label for="danh_muc_sp">Danh mục hàng</label>
               <?php include('../functions/console_log.php') ?>
-              <?php include('../data/category_list.php.php') ?>
-              <?php foreach ($category_list as $category) {
-                console_log($category);
-                echo '<option>-- Chọn một danh mục --</option>
-                <option>'. $category['name'] .'</option>'
-                ;
-              } ?>
-                <!-- <option>-- Chọn một danh mục --</option>
-                <option>. $category['id'] .</option>
-                <option>Nước</option>
-                <option>Bánh quy</option>
-                <option>Bánh mì</option> -->
+              <?php include('../data/category_list.php') ?>
+              <select id="danh_muc_sp" class="form-control" name="category_id">
+                <option value="" disabled selected>-- Chọn một danh mục --</option>
+                <?php foreach ($category_list as $category) {
+                // console_log($category);
+                  echo '<option value='. $category['id'] .'>'. $category['title'] .'</option>';
+                 } 
+                 ?>
               </select>
             </div>
 
@@ -67,10 +62,9 @@
               </div>
             </div>
 
-
             <div class="form-group mb-3">
               <label for="price">Giá</label>
-              <input id="price" type="number" name="price" class="form-control">$
+              <input id="price" type="number" name="price" class="form-control">
             </div>
 
             <div class="images">
