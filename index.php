@@ -1,19 +1,36 @@
-<?php include('partials_front/header.php'); ?>
-<nav class="navbar navbar-light py-5 bg-image" style="
-        background-image: url('./assets/images/chup-anh-thuc-an-1.jpg');
-        height: 20vh;
-      "
-    >
-
-    <div class="container-fluid justify-content-center">
-        <form class="d-flex input-group w-auto" action="search_food.php" method="POST">
-            <input type="search" class="form-control rounded" name="search_food" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <button type="submit"  class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
+<?php
+if (isset($_GET['id_user'])) {
+    $id_user = $_GET['id_user'];
+}
+?>
+<?php include("partials_front/header.php"); ?>
+<div class="carousel container py-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid" alt="Wild Landscape" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid" alt="Camera" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/images/pizza.png" class="d-block w-100 img-fluid" alt="Exotic Fruits" />
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
     </div>
-</nav>
+</div>
 <?php include('./danhmuc.php'); ?>
 <?php include('./monan.php'); ?>
 <?php include('partials_front/footer.php'); ?>

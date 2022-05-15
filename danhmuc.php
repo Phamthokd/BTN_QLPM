@@ -16,7 +16,7 @@
                 
         <!--Grid column-->
         <div class="mb-4 col ">
-            <img src="./assets/images/<?php echo $image_name; ?>" class="img-fluid rounded-4 shadow-2-strong" alt="" />
+           <a href="http://localhost:88/BTN_QLPM/monan-food.php?id_user=<?php echo $id_user ?>&id_category=<?php echo $id ?>"> <img src="./assets/images/<?php echo $image_name; ?>" class="img-fluid rounded-4 shadow-2-strong" alt="" /></a>
             <h3><?php echo $title ;?></h3>
         </div>
         <!--Grid column-->

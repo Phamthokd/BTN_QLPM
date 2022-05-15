@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['login_ok']))
+        header("Location: http://localhost:88/BTN_QLPM/register%20login/login.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,23 +33,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" height="45" alt="Logo" loading="lazy" />
                 </a>
                 <!-- Left links -->
+              
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php">Trang chủ</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/index.php?id_user=<?php echo $id_user ?>">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./danhmuc-food.php">Danh mục</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/danhmuc-food.php?id_user=<?php echo $id_user ?>">Danh mục</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./monan-food.php">Đồ ăn</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/monan-food.php?id_user=<?php echo $id_user ?>">Đồ ăn</a>
                     </li>
                 </ul>
                 <!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
+
+            <form class="d-flex input-group w-auto" action="search_food.php?id_user=<?php echo $id_user ?>" method="POST">
+                <input type="search" class="form-control rounded" name="search_food" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
 
             <!-- Right elements -->
             <div class="d-flex align-items-center">
@@ -57,7 +70,7 @@
                 <div class="dropdown">
                     <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bell"></i>
-                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        <span class="badge rounded-pill badge-notification bg-danger"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
@@ -84,7 +97,7 @@
                             <a class="dropdown-item" href="#">Cài đặt</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Đăng xuất</a>
+                            <a class="dropdown-item" href="http://localhost:88/BTN_QLPM/register%20login/logout.php">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
