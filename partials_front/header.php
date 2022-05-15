@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['login_ok']))
+        header("Location: http://localhost:88/BTN_QLPM/register%20login/login.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" height="45" alt="Logo" loading="lazy" />
                 </a>
                 <!-- Left links -->
               
@@ -65,7 +70,7 @@
                 <div class="dropdown">
                     <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bell"></i>
-                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        <span class="badge rounded-pill badge-notification bg-danger"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li>
@@ -92,7 +97,7 @@
                             <a class="dropdown-item" href="#">Cài đặt</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Đăng xuất</a>
+                            <a class="dropdown-item" href="http://localhost:88/BTN_QLPM/register%20login/logout.php">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>

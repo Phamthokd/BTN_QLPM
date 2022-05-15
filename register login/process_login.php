@@ -16,6 +16,7 @@ if (isset($_POST['btn_login'])) {
         
         if($pass == $pass_saved){//kiểm tra mk nhập và mk trên hệ thống có trùng ko và thêm đk là status phaiar bằng 1
             $id_user = $row['id'];
+            $_SESSION['login_ok']=$id_user;
             header("Location:http://localhost:88/BTN_QLPM/index.php?id_user=$id_user");
         }else {
             $values = 'false';
