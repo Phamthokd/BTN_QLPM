@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 12, 2022 lúc 04:49 PM
+-- Thời gian đã tạo: Th5 15, 2022 lúc 12:42 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -79,11 +79,11 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`id`, `title`, `description`, `price`, `image_name`, `category_id`, `featured`, `active`) VALUES
-(1, 'Dumplings Specials', 'Chicken Dumpling with herbs from Mountains', '5.00', 'Food-Name-3649.jpg', 3, 1, 1),
-(2, 'Best Burger', 'Burger with Ham, Pineapple and lots of Cheese', '4.00', 'Food-Name-6340.jpg', 2, 1, 1),
-(3, 'Smoky BBQ Pizza', 'Best Firewood Pizza in Town.', '6.00', 'Food-Name-8298.jpg', 1, 1, 1),
-(4, 'Sadeko Momo', 'Best Spicy Momo for Winter', '6.00', 'Food-Name-7387.jpg', 3, 1, 1),
-(9, 'Mixed Pizza', 'Pizza with chicken, Ham, Buff, Mushroom and Vegeta..', '10.00', 'Food-Name-7833.jpg', 1, 1, 1);
+(1, 'Dumplings Specials', 'Bánh bao nhân gà với các loại thảo mộc vùng núi', '5.00', 'Food-Name-3649.jpg', 3, 1, 1),
+(2, 'Best Burger', 'Burger với giăm bông, dứa và nhiều pho mát', '4.00', 'Food-Name-6340.jpg', 2, 1, 1),
+(3, 'Smoky BBQ Pizza', 'Pizza Củi ngon nhất tại Thị trấn.', '6.00', 'Food-Name-8298.jpg', 1, 1, 1),
+(4, 'Sadeko Momo', 'Momo cay ngon nhất cho mùa đông', '6.00', 'Food-Name-7387.jpg', 3, 1, 1),
+(9, 'Mixed Pizza', 'Pizza với gà, giăm bông, thịt nướng, nấm và rau ...', '10.00', 'Food-Name-7833.jpg', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -98,11 +98,33 @@ CREATE TABLE `oder` (
   `qty` int(11) NOT NULL,
   `total` decimal(10,2) NOT NULL,
   `oder_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` varchar(50) NOT NULL,
-  `custormer_name` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `custormer_name` varchar(50) NOT NULL,
   `customer_contact` int(11) NOT NULL,
   `customer_address` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `oder`
+--
+
+INSERT INTO `oder` (`id`, `user_id`, `food_id`, `qty`, `total`, `oder_date`, `status`, `custormer_name`, `customer_contact`, `customer_address`) VALUES
+(25, 23, 3, 2, '12.00', '2022-05-14 11:19:29', 0, 'team09shop', 397327836, 'Hà Nội'),
+(26, 23, 2, 2, '8.00', '2022-05-14 12:20:07', 0, 'team09shop', 397327836, 'Hà Nội'),
+(27, 23, 2, 2, '8.00', '2022-05-14 12:21:33', 0, 'team09shop', 397327836, 'Hà Nội'),
+(29, 23, 2, 2, '8.00', '2022-05-14 12:23:34', 0, 'w', 397327836, 'Hà Nội'),
+(30, 23, 2, 2, '8.00', '2022-05-14 12:24:44', 0, 'w', 397327836, 'Hà Nội'),
+(37, 24, 3, 1, '6.00', '2022-05-15 11:23:10', 0, 'team09shop2', 397327836, 'Hà Nội'),
+(38, 24, 4, 2, '12.00', '2022-05-15 11:23:39', 0, 'team09shop4', 2147483647, 'Hà Nội'),
+(39, 24, 4, 2, '12.00', '2022-05-15 11:24:38', 0, 'team09shop4', 2147483647, 'Hà Nội'),
+(40, 24, 3, 2, '12.00', '2022-05-15 13:41:39', 0, 'team09shop', 397327836, 'Hà Nội'),
+(41, 24, 3, 2, '12.00', '2022-05-15 13:42:31', 0, 'team09shop', 397327836, 'Hà Nội'),
+(42, 24, 1, 4, '20.00', '2022-05-15 13:42:46', 0, 'js', 397327836, 'Hà Nội'),
+(43, 24, 1, 4, '20.00', '2022-05-15 13:43:43', 0, 'js', 397327836, 'Hà Nội'),
+(44, 24, 1, 4, '20.00', '2022-05-15 13:46:27', 0, 'js', 397327836, 'Hà Nội'),
+(45, 24, 1, 1, '5.00', '2022-05-15 13:46:53', 0, 'team09shop', 397327836, 'Hà Nội'),
+(46, 24, 9, 2, '20.00', '2022-05-15 13:53:13', 0, 'w1', 2147483647, 'Hà Nội'),
+(47, 24, 1, 2, '10.00', '2022-05-15 15:03:19', 0, 'lê dũng', 397327836, 'Hà Nội');
 
 -- --------------------------------------------------------
 
@@ -113,7 +135,7 @@ CREATE TABLE `oder` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `fisrt_name` varchar(50) NOT NULL,
-  `last_name` int(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `registration_date` datetime NOT NULL DEFAULT current_timestamp(),
   `email` varchar(50) NOT NULL,
@@ -121,6 +143,14 @@ CREATE TABLE `user` (
   `address` text NOT NULL,
   `pass` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`id`, `fisrt_name`, `last_name`, `username`, `registration_date`, `email`, `phone`, `address`, `pass`) VALUES
+(23, 'Phạm', 'thọ', 'admin', '2022-05-14 00:40:40', 'phamthokd19@gmail.com', '0397327836', 'Hà Nội', '1'),
+(24, 'Phạm', 'thọ', 'admin', '2022-05-14 00:44:43', 'phamthokd@gmail.com', '0397327836', 'Hà Nội', '1');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -186,13 +216,13 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT cho bảng `oder`
 --
 ALTER TABLE `oder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
