@@ -24,9 +24,9 @@
         <dt>Mã hàng</dt>
         <dd>QT01</dd>
         <dt>Tên hàng</dt>
-        <dd>Quần tây QT01</dd>
+        <dd>Bánh ngọt</dd>
         <dt>Danh mục</dt>
-        <dd>Quần</dd>
+        <dd>Bánh</dd>
         <dt>Ảnh sản phẩm</dt>
         <dd>anh1</dd>
         <dd>anh2</dd>
@@ -36,8 +36,6 @@
         <dt>Giá cả</dt>
         <dd>15</dd>
         <dt>Mô tả</dt>
-        <dd>abcdefghijklmnop</dd>
-        <dt>Mô tả chỉ tiết</dt>
         <dd>abcdefghijklmnop</dd>
       </dl>
     </div>

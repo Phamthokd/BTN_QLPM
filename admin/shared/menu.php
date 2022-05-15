@@ -13,16 +13,16 @@
                     <a href="../hang/index.php" class="nav-link active">Hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="../danh_muc_hang/index.php" class="nav-link">Danh mục hàng</a>
+                    <a href="#" class="nav-link">Danh mục hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="../ban_hang/index.php" class="nav-link">Bán hàng</a>
+                    <a href="#" class="nav-link">Bán hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="../giao_hang/index.php" class="nav-link">Giao hàng</a>
+                    <a href="#" class="nav-link">Giao hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="../tai_khoan/index.php" class="nav-link">Tài khoản</a>
+                    <a href="#" class="nav-link">Tài khoản</a>
                 </li>
             </ul>
 
@@ -32,10 +32,10 @@
                         <i class="fas fa-user"></i> <?php echo $_SESSION['username'] ?>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="../tai_khoan/cai_dat.php" class="dropdown-item">
+                        <a href="#" class="dropdown-item">
                             <i class="fas fa-cog"></i> Cài đặt
                         </a>
-                        <a href="../login.php" class="dropdown-item">
+                        <a href="../controllers/logout_account.php" class="dropdown-item">
                             <i class="fas fa-sign-out-alt"></i> Đăng xuất
                         </a>
                     </div>

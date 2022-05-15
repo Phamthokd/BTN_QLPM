@@ -32,9 +32,9 @@
               <label for="">Danh mục hàng</label>
               <select class="form-control">
                 <option>-- Chọn một danh mục --</option>
-                <option>Thịt</option>
-                <option>Rau</option>
-                <option>Trái cây</option>
+                <option>Bánh mì</option>
+                <option>Bánh Hamburger</option>
+                <option>Nước</option>
               </select>
             </div>
             <div class="form-group">
@@ -57,11 +57,7 @@
               <label for="mo_ta_chi_tiet">Mô tả</label>
               <textarea name="mo_ta" class="form-control"></textarea>
             </div>
-            <div class="form-group">
-              <label for="mo_ta_chi_tiet">Mô tả chi tiết</label>
-              <textarea name="mo_ta_chi_tiet" class="form-control"></textarea>
-            </div>
-            <button type="submit" class="btn btn-block btn-primary">Thêm mới</button>
+            <button type="submit" class="btn btn-block btn-primary">Cập nhật</button>
           </form>
         </div>
       </div>
