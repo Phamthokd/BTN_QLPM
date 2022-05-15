@@ -31,28 +31,29 @@
                     <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
                 </a>
                 <!-- Left links -->
+              
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php">Trang chủ</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/index.php?id_user=<?php echo $id_user ?>">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./danhmuc-food.php">Danh mục</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/danhmuc-food.php?id_user=<?php echo $id_user ?>">Danh mục</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./monan-food.php">Đồ ăn</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/monan-food.php?id_user=<?php echo $id_user ?>">Đồ ăn</a>
                     </li>
                 </ul>
                 <!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
-            
-        <form class="d-flex input-group w-auto" action="search_food.php" method="POST">
-            <input type="search" class="form-control rounded" name="search_food" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-            <button type="submit" class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-    
+
+            <form class="d-flex input-group w-auto" action="search_food.php?id_user=<?php echo $id_user ?>" method="POST">
+                <input type="search" class="form-control rounded" name="search_food" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Icon -->

@@ -1,11 +1,16 @@
-<?php include('partials_front/header.php'); ?>
+<?php
+if (isset($_GET['id_user'])) {
+    $id_user = $_GET['id_user'];
+}
+?>
+<?php include("partials_front/header.php"); ?>
 <div class="carousel container py-3">
     <div class="row">
         <div class="col-md-12">
             <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid"  alt="Wild Landscape" />
+                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid" alt="Wild Landscape" />
                     </div>
                     <div class="carousel-item">
                         <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid" alt="Camera" />

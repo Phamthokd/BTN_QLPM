@@ -1,5 +1,9 @@
+<?php
+if (isset($_GET['id_user'])) {
+    $id_user = $_GET['id_user'];
+}
+?>
 <?php include('./partials_front/header.php'); ?>
-
 <?php
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -17,7 +21,7 @@ if ($count > 0) {
 
   <div class="container col-6 mt-5 h-100">
     <h2>Tiến hành đặt hàng</h2>
-    <form action="http://localhost:88/BTN_QLPM/monan-food.php?id=''" method="POST">
+    <form action="http://localhost:88/BTN_QLPM/dathang_success.php?id=<?php echo $id;?>&price=<?php echo $price;?>&id_user=<?php echo $id_user;?>" method="POST">
       <h4>Món ăn: <?php echo $title; ?></h4>
       <input type="hidden" name="food" value="<?php echo $title; ?>">
       <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -53,7 +57,6 @@ if ($count > 0) {
       <button type="submit" class="btn btn-primary btn-block mb-4" name="btn_oder">
         Đặt hàng
       </button>
-   
     </form>
   </div>
   <?php include('./partials_front/footer.php'); ?>

@@ -1,4 +1,9 @@
 <?php
+if (isset($_GET['id_user'])) {
+    $id_user = $_GET['id_user'];
+}
+?>
+<?php
 
 use function PHPSTORM_META\sql_injection_subst;
 
@@ -48,7 +53,7 @@ $count = mysqli_num_rows($res); ?>
                             <h5 class="card-title"><?php echo $title ?></h5>
                             <h6><?php echo $price ?></h6>
                             <p> <?php echo $description ?></p>
-                            <a href="./dathang.php" class="btn btn-outline-light">Mua</a>
+                            <a href="./dathang.php?id=<?php echo $id ?>&id_user=<?php echo $id_user ?>" class="btn btn-outline-light">Mua</a>
                         </div>
                     </div>
                     <!-- Card -->

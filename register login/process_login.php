@@ -13,11 +13,13 @@ if (isset($_POST['btn_login'])) {
     if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
         $pass_saved = $row['pass'];
+        
         if($pass == $pass_saved){//kiểm tra mk nhập và mk trên hệ thống có trùng ko và thêm đk là status phaiar bằng 1
-            header('Location: http://localhost:88/BTN_QLPM/index.php?email='.$email.'');
+            $id_user = $row['id'];
+            header("Location:http://localhost:88/BTN_QLPM/index.php?id_user=$id_user");
         }else {
             $values = 'false';
-            header("location:login.php?response=$values");
+            header("Location:login.php?response=$values");
         }
     } else {
 
