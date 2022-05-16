@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 15, 2022 lúc 12:42 PM
+-- Thời gian đã tạo: Th5 15, 2022 lúc 04:01 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `user_name` varchar(30) NOT NULL,
   `pass` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `admin`
+--
+
+INSERT INTO `admin` (`id`, `full_name`, `user_name`, `pass`) VALUES
+(1, 'phamtho', 'admin', '1');
 
 -- --------------------------------------------------------
 
@@ -83,7 +90,9 @@ INSERT INTO `food` (`id`, `title`, `description`, `price`, `image_name`, `catego
 (2, 'Best Burger', 'Burger với giăm bông, dứa và nhiều pho mát', '4.00', 'Food-Name-6340.jpg', 2, 1, 1),
 (3, 'Smoky BBQ Pizza', 'Pizza Củi ngon nhất tại Thị trấn.', '6.00', 'Food-Name-8298.jpg', 1, 1, 1),
 (4, 'Sadeko Momo', 'Momo cay ngon nhất cho mùa đông', '6.00', 'Food-Name-7387.jpg', 3, 1, 1),
-(9, 'Mixed Pizza', 'Pizza với gà, giăm bông, thịt nướng, nấm và rau ...', '10.00', 'Food-Name-7833.jpg', 1, 1, 1);
+(9, 'Mixed Pizza', 'Pizza với gà, giăm bông, thịt nướng, nấm và rau ...', '10.00', 'Food-Name-7833.jpg', 1, 1, 1),
+(10, 'hamberger', 'Bên trong có trứng', '10.00', 'Food_Category_344.jpg', 2, 1, 1),
+(11, 'bánh mì thập cẩm', 'Bánh mì kẹp rau củ thịt xúc xích...', '5.00', 'banhmi.png', 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -124,7 +133,8 @@ INSERT INTO `oder` (`id`, `user_id`, `food_id`, `qty`, `total`, `oder_date`, `st
 (44, 24, 1, 4, '20.00', '2022-05-15 13:46:27', 0, 'js', 397327836, 'Hà Nội'),
 (45, 24, 1, 1, '5.00', '2022-05-15 13:46:53', 0, 'team09shop', 397327836, 'Hà Nội'),
 (46, 24, 9, 2, '20.00', '2022-05-15 13:53:13', 0, 'w1', 2147483647, 'Hà Nội'),
-(47, 24, 1, 2, '10.00', '2022-05-15 15:03:19', 0, 'lê dũng', 397327836, 'Hà Nội');
+(48, 24, 2, 3, '12.00', '2022-05-15 20:58:08', 0, 'Tho1', 397327836, 'VP'),
+(49, 24, 2, 2, '8.00', '2022-05-15 20:58:55', 0, 'team09shop', 397327836, 'Hà Nội');
 
 -- --------------------------------------------------------
 
@@ -198,7 +208,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -210,13 +220,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT cho bảng `food`
 --
 ALTER TABLE `food`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `oder`
 --
 ALTER TABLE `oder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
