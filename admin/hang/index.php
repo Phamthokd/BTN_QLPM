@@ -58,25 +58,24 @@
               <?php foreach ($food_list as $food) {
                 console_log($food);
                 echo '<tr>
-            <td >'. $food['id'] .'</td>
-            <td >'. $food['title'] .'</td>
-            <td >'. $food['description'] .'</td>
-            <td >'. $food['price'] .'</td>
-            <td >'. $food['category_id'] .'</td>
-            <td >'. $food['active'] .'</td>
-            <td>
-            <a href="chi_tiet.php" class="btn btn-primary btn-sm">
-              <i class="fas fa-info"></i>
-            </a>
-            <a href="sua.php" class="btn btn-primary btn-sm">
-              <i class="fas fa-edit"></i>
-            </a>
-            <a href="an.php" class="btn btn-danger btn-sm">
-              <i class="fas fa-eye-slash"></i>
-            </a>
-          </td>
-        </tr>
-          ';
+                  <td >'. $food['id'] .'</td>
+                  <td >'. $food['title'] .'</td>
+                  <td >'. $food['description'] .'</td>
+                  <td >'. $food['price'] .'</td>
+                  <td >'. $food['category_id'] .'</td>
+                  <td >'. $food['active'] .'</td>
+                  <td>
+                  <a href="chi_tiet.php" class="btn btn-primary btn-sm">
+                    <i class="fas fa-info"></i>
+                  </a>
+                  <a href="sua.php?id='.$food['id'].'" class="btn btn-primary btn-sm">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a href="xoa.php" class="btn btn-danger btn-sm">
+                    <i class="fas fa-eye-slash"></i>
+                  </a>
+                  </td>
+                </tr>';
               } ?>
             </tbody>
           </table>

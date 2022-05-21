@@ -2,6 +2,8 @@
 <html lang="en">
 
 <?php include('../shared/header.php') ?>
+<?php include('../data/category_list.php') ?>
+<?php include('../data/food_list.php') ?>
 
 <body>
   <!-- NAVIGATION -->
@@ -22,26 +24,44 @@
     <div class="container">
       <div class="row py-2">
         <div class="col-md-8">
-          <form>
+        <?php 
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            foreach ($food_list as $food) {
+              if($food['id']==$id){
+                $current_food_name = $food['title'];
+              } 
+            }
+            
+        }
+        else
+        {
+            //Redirect to Manage Food
+            header('http://localhost:88/BTN_QLPM/admin/hang/index.php');
+        }
+    ?>
+          <form method='post' action="update_food.php">
             <input type="hidden" name="id">
             <div class="form-group">
               <label for="ten_tieu_de">Tên hàng</label>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" placeholder="<?php echo $current_food_name ?>" />
             </div>
             <div class="form-group">
               <label for="">Danh mục hàng</label>
-              <select class="form-control">
-                <option>-- Chọn một danh mục --</option>
-                <option>Bánh mì</option>
-                <option>Bánh Hamburger</option>
-                <option>Nước</option>
+              <select id="danh_muc_sp" class="form-control" name="category_id">
+                <option value="" disabled selected>-- Chọn một danh mục --</option>
+                <?php foreach ($category_list as $category) {
+                  echo '<option value='. $category['id'] .'>'. $category['title'] .'</option>';
+                 } 
+                 ?>
               </select>
             </div>
             <div class="form-group">
               <label for="image">Ảnh sản phẩm</label>
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="image" />
-                <label for="image" class="custom-file-label">Chọn ảnh bìa</label>
+                <label for="image" class="custom-file-label">Chọn ảnh sản phẩm</label>
               </div>
               <small class="form-text text-muted">Max Size 3mb</small>
             </div>
@@ -57,7 +77,7 @@
               <label for="mo_ta_chi_tiet">Mô tả</label>
               <textarea name="mo_ta" class="form-control"></textarea>
             </div>
-            <button type="submit" class="btn btn-block btn-primary">Cập nhật</button>
+            <button type="submit" class="btn btn-block btn-primary" >Cập nhật</button>
           </form>
         </div>
       </div>
