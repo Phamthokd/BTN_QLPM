@@ -10,7 +10,7 @@ if (isset($_GET['id_user'])) {
             <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid" alt="Wild Landscape" />
+                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid w-auto h-auto" alt="Wild Landscape" />
                     </div>
                     <div class="carousel-item">
                         <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid" alt="Camera" />
@@ -34,3 +34,9 @@ if (isset($_GET['id_user'])) {
 <?php include('./danhmuc.php'); ?>
 <?php include('./monan.php'); ?>
 <?php include('partials_front/footer.php'); ?>
+<!-- <script>
+    $(document).ready(function () {
+       alert("Đăng nhập thành công");
+
+});
+</script> -->
