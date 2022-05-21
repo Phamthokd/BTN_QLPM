@@ -5,6 +5,13 @@
 <body>
   <?php include('../shared/menu.php') ?>
   <!-- HEADER -->
+  <?php 
+    if(isset($_SESSION['login']))
+    {
+        echo $_SESSION['login'];
+        unset($_SESSION['login']);
+    }
+  ?>
   <header id="main-header" class="py-2">
     <div class="container">
       <div class="row">
@@ -99,6 +106,13 @@
   <?php include('../shared/footer.php') ?>
   <!-- SCRIPT -->
   <?php include('../shared/script.php') ?>
+
+  <script>
+    alert_success.setTimeout(() => {
+      alert('Đăng nhập thành công');
+    }, 1000); 
+    
+  </script>
 </body>
 
 </html>

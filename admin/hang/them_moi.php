@@ -33,7 +33,7 @@
               <label for="danh_muc_sp">Danh mục hàng</label>
               <?php include('../functions/console_log.php') ?>
               <?php include('../data/category_list.php') ?>
-              <select id="danh_muc_sp" class="form-control" name="category_id">
+              <select id="danh_muc_sp" class="form-control" name="category_id" required>
                 <option value="" disabled selected>-- Chọn một danh mục --</option>
                 <?php foreach ($category_list as $category) {
                 // console_log($category);
@@ -49,7 +49,7 @@
                 <div class="row">
                   <div class="col">
                     <div class="form-group">
-                      <select id="active" name="active" class="form-control">
+                      <select id="active" name="active" class="form-control" required>
                       <option value="" disabled selected>-- Chọn trạng thái --</option>
                       <option value='1'>Hoạt động</option>
                       <option value='0'>Không hoạt động</option>
