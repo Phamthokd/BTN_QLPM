@@ -17,10 +17,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <a href="./them_moi.php" class="btn btn-primary">Thêm mới
-            </a>
+            <a href="./them_moi.php" class="btn btn-primary">Thêm mới</a>
+            <?php
+            if (isset($_SESSION['update'])) {
+              echo $_SESSION['update'];
+              unset($_SESSION['update']);
+            }
+            if (isset($_SESSION['remove-failed'])) {
+              echo $_SESSION['remove-failed'];
+              unset($_SESSION['remove-failed']);
+            }
+            if (isset($_SESSION['update'])) {
+              echo $_SESSION['update'];
+              unset($_SESSION['update']);
+            }
+            ?>
           </div>
-   
         </div>
       </div>
     </section>
@@ -35,7 +47,7 @@
               <div class="row">
                 <h4 class="col-md-6">Danh sách hàng</h4>
                 <div class="dropdown ml-auto col-md-3">
-            
+
                 </div>
               </div>
             </div>
@@ -53,22 +65,22 @@
               </tr>
             </thead>
             <tbody class>
-            <?php include('../functions/console_log.php') ?>
+              <?php include('../functions/console_log.php') ?>
               <?php include('../data/food_list.php') ?>
               <?php foreach ($food_list as $food) {
                 console_log($food);
                 echo '<tr>
-                  <td >'. $food['id'] .'</td>
-                  <td >'. $food['title'] .'</td>
-                  <td >'. $food['description'] .'</td>
-                  <td >'. $food['price'] .'</td>
-                  <td >'. $food['category_id'] .'</td>
-                  <td >'. $food['active'] .'</td>
+                  <td >' . $food['id'] . '</td>
+                  <td >' . $food['title'] . '</td>
+                  <td >' . $food['description'] . '</td>
+                  <td >' . $food['price'] . '</td>
+                  <td >' . $food['category_id'] . '</td>
+                  <td >' . $food['active'] . '</td>
                   <td>
                   <a href="chi_tiet.php" class="btn btn-primary btn-sm">
                     <i class="fas fa-info"></i>
                   </a>
-                  <a href="sua.php?id='.$food['id'].'" class="btn btn-primary btn-sm">
+                  <a href="sua.php?id=' . $food['id'] . '" class="btn btn-primary btn-sm">
                     <i class="fas fa-edit"></i>
                   </a>
                   <a href="xoa.php" class="btn btn-danger btn-sm">

@@ -1,5 +1,4 @@
 <?php include('../controllers/login_check.php') ?>
-
 <!-- NAVIGATION -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-3">
     <div class="container">
