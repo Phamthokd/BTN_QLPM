@@ -19,17 +19,39 @@
           <div class="col-md-8">
             <a href="./them_moi.php" class="btn btn-primary">Thêm mới</a>
             <?php
-            if (isset($_SESSION['update'])) {
-              echo $_SESSION['update'];
-              unset($_SESSION['update']);
+            if(isset($_SESSION['login']))
+            {
+                echo $_SESSION['login'];
+                unset($_SESSION['login']);
             }
-            if (isset($_SESSION['remove-failed'])) {
-              echo $_SESSION['remove-failed'];
-              unset($_SESSION['remove-failed']);
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
             }
-            if (isset($_SESSION['update'])) {
-              echo $_SESSION['update'];
-              unset($_SESSION['update']);
+
+            if(isset($_SESSION['delete']))
+            {
+                echo $_SESSION['delete'];
+                unset($_SESSION['delete']);
+            }
+
+            if(isset($_SESSION['upload']))
+            {
+                echo $_SESSION['upload'];
+                unset($_SESSION['upload']);
+            }
+
+            if(isset($_SESSION['unauthorize']))
+            {
+                echo $_SESSION['unauthorize'];
+                unset($_SESSION['unauthorize']);
+            }
+
+            if(isset($_SESSION['update']))
+            {
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
             }
             ?>
           </div>
@@ -83,8 +105,8 @@
                   <a href="sua.php?id=' . $food['id'] . '" class="btn btn-primary btn-sm">
                     <i class="fas fa-edit"></i>
                   </a>
-                  <a href="xoa.php" class="btn btn-danger btn-sm">
-                    <i class="fas fa-eye-slash"></i>
+                  <a href="xoa.php?id='.$food['id'].'&image_name='.$food['image_name'].' " class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
                   </a>
                   </td>
                 </tr>';
