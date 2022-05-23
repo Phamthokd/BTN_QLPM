@@ -70,7 +70,6 @@
               <?php include('../functions/console_log.php') ?>
               <?php include('../data/admin_list.php') ?>
               <?php foreach ($admin_list as $admin) {
-                console_log($admin);
                 echo '<tr>
                   <td >' . $admin['id'] . '</td>
                   <td >' . $admin['full_name'] . '</td>

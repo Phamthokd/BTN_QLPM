@@ -2,6 +2,7 @@
     //Include COnstants Page
     include('../constants.php');
     include('../../configs/database.php');
+    include('../functions/console_log.php');
 
     //echo "Delete Food Page";
 
@@ -13,7 +14,6 @@
         //1.  Get ID and Image NAme
         $id = $_GET['id'];
         $image_name = $_GET['image_name'];
-
         //2. Remove the Image if Available
         //CHeck whether the image is available or not and Delete only if available
         if($image_name != "")
@@ -23,7 +23,7 @@
             $path = "../assets/img/".$image_name;
 
             //REmove Image File from Folder
-            $remove = unlink($path);
+            $remove = @unlink($path);
 
             //Check whether the image is removed or not
             if($remove==false)
@@ -33,7 +33,7 @@
                 //REdirect to Manage Food
                 header('location:'.SITEURL.'/admin/hang/index.php');
                 //Stop the Process of Deleting Food
-                // die();
+                die();
             }
 
         }

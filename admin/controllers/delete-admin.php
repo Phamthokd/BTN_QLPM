@@ -1,4 +1,5 @@
 <?php 
+    include('./session_start.php');
     include('../../configs/database.php');
     include('../constants.php');
 
@@ -10,12 +11,12 @@
 
     if($res==true)
     {
-        $_SESSION['delete'] = "<div class='success'>Admin Deleted Successfully.</div>";
+        $_SESSION['delete'] = "<div class='success'>Xóa thành công.</div>";
         header('location:'.SITEURL.'/admin/employee/manage_admin.php');
     }
     else
     {
-        $_SESSION['delete'] = "<div class='error'>Failed to Delete Admin. Try Again Later.</div>";
+        $_SESSION['delete'] = "<div class='error'>Xóa thất bại. Thử lại sau</div>";
         header('location:'.SITEURL.'/admin/employee/manage_admin.php');
     }
 

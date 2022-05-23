@@ -1,4 +1,5 @@
 <?php 
+    include('../controllers/session_start.php');
     include('../../configs/database.php');
     include('../constants.php');
     include('../shared/header.php');
@@ -76,12 +77,12 @@
 
         if($res==true)
         {
-            $_SESSION['update'] = "<div class='success'>Admin Updated Successfully.</div>";
+            $_SESSION['update'] = "<div class='success'>Cập nhật thành công.</div>";
             header('location:'.SITEURL.'/admin/employee/manage_admin.php');
         }
         else
         {
-            $_SESSION['update'] = "<div class='error'>Failed to Delete Admin.</div>";
+            $_SESSION['update'] = "<div class='error'>Cập nhật thất bại.</div>";
             header('location:'.SITEURL.'/admin/employee/manage_admin.php');
         }
     }
