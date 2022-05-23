@@ -21,7 +21,10 @@
                     <a href="#" class="nav-link">Giao hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="#" class="nav-link">Tài khoản</a>
+                    <a href="../employee/manage_admin.php" class="nav-link">Quản lí Admin</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="../employee/manage_user.php" class="nav-link">Quản lí User</a>
                 </li>
             </ul>
 
