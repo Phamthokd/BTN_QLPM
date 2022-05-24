@@ -10,13 +10,14 @@ if (isset($_GET['id_user'])) {
             <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid w-auto h-auto" alt="Wild Landscape" />
+                        
+                        <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid " alt="Camera" />
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid" alt="Camera" />
+                    <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid " alt="Wild Landscape" />
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/images/pizza.png" class="d-block w-100 img-fluid" alt="Exotic Fruits" />
+                        <img src="./assets/images/pizza.png" class="d-block w-100 img-fluid " alt="Exotic Fruits" />
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">

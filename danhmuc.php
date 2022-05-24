@@ -4,7 +4,7 @@
     <!--Grid row-->
     <div class="row">
         <?php include('./configs/database.php');
-        $sql = "SELECT * FROM `category` WHERE active = '1'";
+        $sql = "SELECT * FROM `category` WHERE active = '1' LIMIT 0,3";
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
         if ($count > 0) {
