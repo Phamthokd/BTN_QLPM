@@ -16,6 +16,7 @@ if ($so_luong == 1) {
     session_start();
     unset($_SESSION['login_error']);
     $_SESSION['username'] = $username;
+    $_SESSION['login'] = '<div class="alert alert-success" role="success">Đăng nhập thành công</div>';
     header("Location: http://localhost:88/BTN_QLPM/admin/hang/index.php");
 } else {
     session_start();

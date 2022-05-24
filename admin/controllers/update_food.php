@@ -1,12 +1,21 @@
 <?php
+include('../constants.php');
 include("../../configs/database.php");
-$target_dir = "../../uploads/";
+$target_dir = "../assets/img/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {
+    $price = $_POST["price"];
+    $food_id = $_POST["id"];
+    $active = $_POST["active"];
+    $title = $_POST["food_name"];
+    $description = $_POST["mo_ta"];
+    $image_name = basename($_FILES["fileToUpload"]["name"]);
+    $current_image = $_POST["current_image"];
+    $category_id = $_POST["category_id"];
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if ($check !== false) {
         echo "File là một ảnh - " . $check["mime"] . ".";
@@ -17,11 +26,7 @@ if (isset($_POST["submit"])) {
     }
 }
 
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Xin lỗi, file này đã tồn tại.";
-    $uploadOk = 0;
-}
+
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
@@ -44,17 +49,15 @@ if ($uploadOk == 0) {
     // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        $price = $_POST["price"];
-        $active = $_POST["active"];
-        $title = $_POST["food_name"];
-        $description = $_POST["mo_ta"];
-        $imagename = basename($_FILES["fileToUpload"]["name"]);
-        $category_id = $_POST["category_id"];
-        $sqlInsert = "INSERT INTO food (title, description, price,image_name,category_id,active) VALUES ('$title','$description','$price','$imagename','$category_id','$active')";
-        $du_lieu = mysqli_query($conn, $sqlInsert);
+        $sqlUpdate = "UPDATE food SET title = '$title',description = '$description',price = '$price',image_name = '$image_name',category_id = '$category_id',active = '$active'WHERE id='$food_id'";
+        $du_lieu = mysqli_query($conn, $sqlUpdate);
         if ($du_lieu == 1) {
+            $_SESSION['update'] = "<div class='success'>Cập nhật thành công</div>";
             header('Location: http://localhost:88/BTN_QLPM/admin/hang/index.php');
-        } else echo $du_lieu;
+        } else {
+            $_SESSION['update'] = "<div class='error'>Cập nhật thất bại</div>";
+            header('Location: http://localhost:88/BTN_QLPM/admin/hang/index.php');
+        }
     } else {
         echo "Xin lỗi, có lỗi khi tải file của bạn.";
     }

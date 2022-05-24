@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1>Quản lý hàng</h1>
+          <h1>Quản lý người dùng</h1>
         </div>
       </div>
     </div>
@@ -17,35 +17,24 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <a href="./them_moi.php" class="btn btn-primary">Thêm mới</a>
+            <a href="../controllers/add-user.php" class="btn btn-primary">Thêm mới</a>
             <?php
-            if (isset($_SESSION['login'])) {
-              echo $_SESSION['login'];
-              unset($_SESSION['login']);
-            }
-            if (isset($_SESSION['add'])) {
-              echo $_SESSION['add'];
-              unset($_SESSION['add']);
+            if(isset($_SESSION['add']))
+            {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
             }
 
-            if (isset($_SESSION['delete'])) {
-              echo $_SESSION['delete'];
-              unset($_SESSION['delete']);
+            if(isset($_SESSION['delete']))
+            {
+                echo $_SESSION['delete'];
+                unset($_SESSION['delete']);
             }
 
-            if (isset($_SESSION['upload'])) {
-              echo $_SESSION['upload'];
-              unset($_SESSION['upload']);
-            }
-
-            if (isset($_SESSION['unauthorize'])) {
-              echo $_SESSION['unauthorize'];
-              unset($_SESSION['unauthorize']);
-            }
-
-            if (isset($_SESSION['update'])) {
-              echo $_SESSION['update'];
-              unset($_SESSION['update']);
+            if(isset($_SESSION['update']))
+            {
+                echo $_SESSION['update'];
+                unset($_SESSION['update']);
             }
             ?>
           </div>
@@ -61,7 +50,7 @@
           <div class="card">
             <div class="card-header">
               <div class="row">
-                <h4 class="col-md-6">Danh sách hàng</h4>
+                <h4 class="col-md-6">Danh sách người dùng</h4>
                 <div class="dropdown ml-auto col-md-3">
 
                 </div>
@@ -71,34 +60,33 @@
           <table>
             <thead class="bg-dark">
               <tr>
-                <th>Mã hàng</th>
-                <th>Tên hàng</th>
-                <th>Mô tả</th>
-                <th>Giá</th>
-                <th>Danh mục</th>
-                <th>Hoạt động</th>
+                <th>STT</th>
+                <th>Họ tên</th>
+                <th>Tên đăng nhập</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Điện thoại</th>
+                <th>Ngày đăng kí</th>
                 <th style="width: 120px;"></th>
               </tr>
             </thead>
             <tbody class>
               <?php include('../functions/console_log.php') ?>
-              <?php include('../data/food_list.php') ?>
-              <?php foreach ($food_list as $food) {
+              <?php include('../data/user_list.php') ?>
+              <?php foreach ($user_list as $user) {
                 echo '<tr>
-                  <td >' . $food['id'] . '</td>
-                  <td >' . $food['title'] . '</td>
-                  <td >' . $food['description'] . '</td>
-                  <td >' . $food['price'] . '</td>
-                  <td >' . $food['category_id'] . '</td>
-                  <td >' . $food['active'] . '</td>
+                  <td >' . $user['id'] . '</td>
+                  <td >' . $user['fisrt_name'].' '.  $user['last_name'] . '</td>
+                  <td >' . $user['username']. '</td>
+                  <td >' . $user['address']. '</td>
+                  <td >' . $user['email']. '</td>
+                  <td >' . $user['phone']. '</td>
+                  <td >' . $user['registration_date']. '</td>
                   <td>
-                  <a href="chi_tiet.php" class="btn btn-primary btn-sm">
-                    <i class="fas fa-info"></i>
-                  </a>
-                  <a href="sua.php?id=' . $food['id'] . '" class="btn btn-primary btn-sm">
+                  <a href="../controllers/update-user.php?id='.$user['id'].'" class="btn btn-primary btn-sm">
                     <i class="fas fa-edit"></i>
                   </a>
-                  <a href="xoa.php?id=' . $food['id'] . '&image_name=' . $food['image_name'] . ' " class="btn btn-danger btn-sm">
+                  <a href="../controllers/delete-user.php?id='.$user['id'].'" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i>
                   </a>
                   </td>
