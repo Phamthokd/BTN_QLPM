@@ -18,13 +18,10 @@
                     <a href="../donhang/index.php" class="nav-link active">Đơn hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="#" class="nav-link">Giao hàng</a>
+                    <a href="../employee/manage_admin.php" class="nav-link active">Quản lí Admin</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="../employee/manage_admin.php" class="nav-link">Quản lí Admin</a>
-                </li>
-                <li class="nav-item px-2">
-                    <a href="../employee/manage_user.php" class="nav-link">Quản lí User</a>
+                    <a href="../employee/manage_user.php" class="nav-link active">Quản lí User</a>
                 </li>
             </ul>
 
