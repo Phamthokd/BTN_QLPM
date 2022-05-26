@@ -28,12 +28,15 @@
           if (isset($_GET['id'])) {
             $current_id = $_GET['id'];
             foreach ($food_list as $food) {
+
+
               if ($food['id'] == $current_id) {
                 $current_name = $food['title'];
                 $current_price = $food['price'];
                 $current_image = $food['image_name'];
                 $current_active = $food['active'];
                 $current_description = $food['description'];
+                $category_id = $food['category'];
               }
             }
           } else {
@@ -49,9 +52,10 @@
             <div class="form-group">
               <label for="">Danh mục hàng</label>
               <select id="danh_muc_sp" class="form-control" name="category_id" required>
-                <option value="" disabled selected>-- Chọn một danh mục --</option>
+                <option value="" disabled>-- Chọn một danh mục --</option>
                 <?php foreach ($category_list as $category) {
-                  echo '<option value=' . $category['id'] . '>' . $category['title'] . '</option>';
+                  $select = $category["id"] == $category_id ? "selected" : "";
+                  echo '<option  value=' . $category['id'] . ' selected=' . $select . ' >' . $category['title'] . '</option>';
                 }
                 ?>
               </select>
@@ -60,8 +64,14 @@
               <label for="">Trạng thái hàng</label>
               <select id="active" name="active" class="form-control" required>
                 <option value="" disabled selected>-- Chọn trạng thái --</option>
-                <option value='1'>Hoạt động</option>
-                <option value='0'>Không hoạt động</option>
+                <?php 
+                  $select = $current_active == 1 ? "selected" : "";
+                  echo '<option selected=' . $select . ' value="1">Hoạt động</option>';
+                ?>
+                 <?php 
+                  $select = $current_active == 0 ? "selected" : "";
+                  echo '<option selected=' . $select . ' value="0">Không hoạt động</option>';
+                ?>
               </select>
             </div>
             <div class="form-group">
@@ -76,7 +86,7 @@
                 echo "<div class='error'>Ảnh không có sẵn.</div>";
               } else {
               ?>
-                <img id="imagePreview" style="margin-top: 10px" src="<?php echo SITEURL; ?>/admin/assets/img/<?php echo $current_image; ?>" width="150px">
+                <img id="imagePreview" style="margin-top: 10px" src="<?php echo SITEURL; ?>/assets/images/<?php echo $current_image; ?>" width="150px">
                 <input type="hidden" name="current_image" value="<?php echo $current_image ?>">
               <?php
               }
