@@ -1,6 +1,6 @@
 <?php
 include("../../configs/database.php");
-$target_dir = "../../assets/images";
+$target_dir = "../../assets/images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1>Quản lý hàng</h1>
+          <h1>Quản lý danh mục</h1>
         </div>
       </div>
     </div>

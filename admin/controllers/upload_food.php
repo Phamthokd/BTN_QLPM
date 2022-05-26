@@ -1,7 +1,7 @@
 <?php
 include('session_start.php');
 include("../../configs/database.php");
-$target_dir = "../assets/img/";
+$target_dir = "../../assets/images/";
 $target_file = basename($_FILES["fileToUpload"]["name"]) != '' ?  $target_dir . basename($_FILES["fileToUpload"]["name"]) : null;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

@@ -44,10 +44,10 @@
                         <a class="nav-link" href="http://localhost:88/BTN_QLPM/index.php?id_user=<?php echo $id_user ?>">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/danhmuc-food.php?id_user=<?php echo $id_user ?>">Danh mục</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/danhmuc-food.php?id_user=<?php echo $id_user ?>&detail">Danh mục</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/monan-food.php?id_user=<?php echo $id_user ?>">Đồ ăn</a>
+                        <a class="nav-link" href="http://localhost:88/BTN_QLPM/monan-food.php?id_user=<?php echo $id_user ?>&detail">Đồ ăn</a>
                     </li>
                 </ul>
                 <!-- Left links -->
