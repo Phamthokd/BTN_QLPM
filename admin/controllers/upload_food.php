@@ -56,6 +56,7 @@ if ($uploadOk == 0) {
         $sqlInsert = "INSERT INTO food (title, description, price,image_name,category_id,active) VALUES ('$title','$description','$price','$imagename','$category_id','$active')";
         $du_lieu = mysqli_query($conn, $sqlInsert);
         if ($du_lieu == 1) {
+            $_SESSION['upload'] = "<div class='alert alert-success' role='success'>Thêm thành công.</div>";
             header('Location: http://localhost:88/BTN_QLPM/admin/hang/index.php');
         } else echo $du_lieu;
     } else {

@@ -20,7 +20,7 @@
         {
             // IT has image and need to remove from folder
             //Get the Image Path
-            $path = "../assets/img/".$image_name;
+            $path = "../../assets/images/".$image_name;
 
             //REmove Image File from Folder
             $remove = @unlink($path);
@@ -39,13 +39,15 @@
         }
 
         //3. Delete Food from Database
+        $sqlDelete1 = "DELETE FROM oder WHERE food_id=$id";
         $sqlDelete = "DELETE FROM food WHERE id=$id";
         //Execute the Query
+        $du_lieu1 = mysqli_query($conn, $sqlDelete1);
         $du_lieu = mysqli_query($conn, $sqlDelete);
 
         //CHeck whether the query executed or not and set the session message respectively
         //4. Redirect to Manage Food with Session Message
-        if($du_lieu==true)
+        if($du_lieu==true && $du_lieu1==true)
         {
             //Food Deleted
             $_SESSION['delete'] = "<div class='alert alert-success' role='success'>Xóa thành công.</div>";
@@ -54,7 +56,7 @@
         else
         {
             //Failed to Delete Food
-            $_SESSION['delete'] = "<div class='alert alert-success' role='success'>";
+            $_SESSION['delete'] = "<div class='alert alert-error' role='error'>";
             header('location:'.SITEURL.'/admin/hang/index.php');
         }
 

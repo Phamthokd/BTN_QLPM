@@ -1,5 +1,6 @@
 <?php
 include('../constants.php');
+include('session_start.php');
 include("../../configs/database.php");
 $target_dir = "../assets/img/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -16,7 +17,19 @@ if (isset($_POST["submit"])) {
     $image_name = basename($_FILES["fileToUpload"]["name"]);
     $current_image = $_POST["current_image"];
     $category_id = $_POST["category_id"];
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    $check = $_FILES["fileToUpload"]["tmp_name"] ? getimagesize($_FILES["fileToUpload"]["tmp_name"]) : false;
+    if ($check == false) {
+        $sqlUpdate = "UPDATE food SET title = '$title',description = '$description',price = '$price',category_id = '$category_id',active = '$active'WHERE id='$food_id'";
+        echo $sqlUpdate;
+        $du_lieu = mysqli_query($conn, $sqlUpdate);
+        if ($du_lieu == 1) {
+            $_SESSION['update'] = "<div class='alert alert-success mt-3'>Cập nhật thành công</div>";
+            header('Location: http://localhost:88/BTN_QLPM/admin/hang/index.php');
+        } else {
+            $_SESSION['update'] = "<div class='alert alert-error mt-3'>Cập nhật thất bại</div>";
+            header('Location: http://localhost:88/BTN_QLPM/admin/hang/index.php');
+        }
+    }
     if ($check !== false) {
         echo "File là một ảnh - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -25,8 +38,6 @@ if (isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 }
-
-
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
