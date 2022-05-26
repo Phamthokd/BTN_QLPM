@@ -48,7 +48,7 @@ if ($count > 0) {
 
 
       <div class="input-group mb-3 form-outline">
-        <span class="input-group-text">$</span>
+        <span class="input-group-text">đ</span>
         <span class="input-group-text"><?php echo $price;} ?></span>
         <input type="number" class="form-control" name="qty" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Số lượng" />
       </div>
