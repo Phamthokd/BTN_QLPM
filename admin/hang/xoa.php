@@ -3,6 +3,7 @@
     include('../constants.php');
     include('../../configs/database.php');
     include('../functions/console_log.php');
+    include('../controllers/session_start.php');
 
     //echo "Delete Food Page";
 
@@ -29,7 +30,7 @@
             if($remove==false)
             {
                 //Failed to Remove image
-                $_SESSION['upload'] = "<div class='alert alert-success' role='success'>Xóa ảnh không thành công.</div>";
+                $_SESSION['upload'] = "<div class='alert alert-error' role='error'>Xóa ảnh không thành công.</div>";
                 //REdirect to Manage Food
                 header('location:'.SITEURL.'/admin/hang/index.php');
                 //Stop the Process of Deleting Food
@@ -56,7 +57,7 @@
         else
         {
             //Failed to Delete Food
-            $_SESSION['delete'] = "<div class='alert alert-error' role='error'>";
+            $_SESSION['delete'] = "<div class='alert alert-error' role='error'>Xóa thất bại.</div>";
             header('location:'.SITEURL.'/admin/hang/index.php');
         }
 
