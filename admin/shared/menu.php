@@ -12,19 +12,16 @@
                     <a href="../hang/index.php" class="nav-link active">Hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="#" class="nav-link">Danh mục hàng</a>
+                    <a href="../danhmuc/index.php" class="nav-link active">Danh mục hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="#" class="nav-link">Bán hàng</a>
+                    <a href="../donhang/index.php" class="nav-link active">Đơn hàng</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="#" class="nav-link">Giao hàng</a>
+                    <a href="../employee/manage_admin.php" class="nav-link active">Quản lí Admin</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="../employee/manage_admin.php" class="nav-link">Quản lí Admin</a>
-                </li>
-                <li class="nav-item px-2">
-                    <a href="../employee/manage_user.php" class="nav-link">Quản lí User</a>
+                    <a href="../employee/manage_user.php" class="nav-link active">Quản lí User</a>
                 </li>
             </ul>
 

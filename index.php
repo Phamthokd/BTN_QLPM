@@ -9,14 +9,14 @@ if (isset($_GET['id_user'])) {
         <div class="col-md-12">
             <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid" alt="Wild Landscape" />
+                    <div class="carousel-item active">     
+                        <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid " alt="Camera" />
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/images/chup-anh-thuc-an-1.png" class="d-block w-100 img-fluid" alt="Camera" />
+                    <img src="./assets/images/banhmi.png" class="d-block w-100 img-fluid " alt="Wild Landscape" />
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/images/pizza.png" class="d-block w-100 img-fluid" alt="Exotic Fruits" />
+                        <img src="./assets/images/banh-donut.png" class="d-block w-100 img-fluid h-50" alt="Exotic Fruits" />
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
@@ -34,3 +34,9 @@ if (isset($_GET['id_user'])) {
 <?php include('./danhmuc.php'); ?>
 <?php include('./monan.php'); ?>
 <?php include('partials_front/footer.php'); ?>
+<!-- <script>
+    $(document).ready(function () {
+       alert("Đăng nhập thành công");
+
+});
+</script> -->
