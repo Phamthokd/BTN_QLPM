@@ -65,7 +65,7 @@
 
       // BƯỚC 5: TRUY VẤN LẤY DANH SÁCH TIN TỨC
       // Có limit và start rồi thì truy vấn CSDL lấy danh sách tin tức
-      $result = mysqli_query($conn, "SELECT a.id,a.user_id,a.food_id,a.qty,a.total,a.oder_date,a.status,a.custormer_name,a.customer_contact,a.customer_address,b.title as food_title FROM `oder` as a, food  as b WHERE a.food_id = b.id and status = 0 or a.food_id = b.id and status = 1 LIMIT $start,$limit");
+      $result = mysqli_query($conn, "SELECT a.id,a.user_id,a.food_id,a.qty,a.total,a.oder_date,a.status,a.custormer_name,a.customer_contact,a.customer_address,b.title as food_title FROM `oder` as a, food  as b WHERE a.food_id = b.id and status = 0 or a.food_id = b.id and status = 1 order by a.status DESC LIMIT $start,$limit");
       ?>
       <div class="row">
         <div class="col-md-12">

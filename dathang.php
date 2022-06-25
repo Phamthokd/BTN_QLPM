@@ -28,7 +28,7 @@ if ($count > 0) {
       <div class="row mb-4">
         <div class="col">
           <div class="form-outline">
-            <input type="text" id="name" name="name" class="form-control" />
+            <input type="text" id="name" name="name" class="form-control" required  />
             <label class="form-label" for="name">Tên</label>
           </div>
         </div>
@@ -36,13 +36,13 @@ if ($count > 0) {
 
       <!-- sdt input -->
       <div class="form-outline mb-4">
-        <input type="tel" id="phone" name="phone" class="form-control" />
+        <input type="tel" id="phone" name="phone" class="form-control" required />
         <label class="form-label" for="phone">Số điện thoại</label>
       </div>
 
       <!-- Text input -->
       <div class="form-outline mb-4">
-        <input type="text" id="address" name="address" class="form-control" />
+        <input type="text" id="address" name="address" class="form-control" required />
         <label class="form-label" for="address">Địa chỉ</label>
       </div>
 
@@ -50,7 +50,7 @@ if ($count > 0) {
       <div class="input-group mb-3 form-outline">
         <span class="input-group-text">đ</span>
         <span class="input-group-text"><?php echo $price;} ?></span>
-        <input type="number" class="form-control" name="qty" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Số lượng" />
+        <input type="number" class="form-control" required pattern="\S+" name="qty" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Số lượng" />
       </div>
 
       <!-- Submit button -->
